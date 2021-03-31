@@ -9,8 +9,8 @@ class Feed extends Component {
             <View style = {styles.center}>
                 <Text style={styles.title}>GoApp Scanner</Text>
                 <Button
-                    title='Go to scanner'
-                    onPress={( ) => { }}
+                    title='Scanner les promotions !'
+                    onPress={( ) => { this.props.navigation.navigate('Scanner')}}
                 />
             </View>
         );

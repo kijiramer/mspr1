@@ -4,6 +4,8 @@ import Feed from './feed';
 
 import Detail from './details';
 
+import App1 from './Camera'
+
 import Screen1 from './screens/drawer/screen1';
 import Screen2 from './screens/drawer/screen2';
 import Screen3 from './screens/drawer/screen3';
@@ -31,7 +33,7 @@ export default class App extends Component {
     createHomeStack = () =>
     <Stack.Navigator>
       <Stack.Screen name="Feed" component={Feed} />
-      <Stack.Screen name="Detail" component={Detail} />
+      <Stack.Screen name="Scanner" component={App1} />
     </Stack.Navigator> 
 
   render() {

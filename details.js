@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { View, Text, Button, TouchableOpacity } from 'react-native';
 import {
   useNavigation,
@@ -27,5 +28,8 @@ class Details extends Component {
         );
     }
 }
+
+
+
 
 export default Details;
