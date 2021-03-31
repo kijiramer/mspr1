@@ -23,7 +23,8 @@
  } from 'react-native/Libraries/NewAppScreen';
  
  import QRCodeScanner from 'react-native-qrcode-scanner';
-  
+
+
  const Section = ({children, title}): Node => {
    return (
      <View style={styles.sectionContainer}>
@@ -53,7 +54,6 @@
    const isDarkMode = useColorScheme() === 'dark';
  
 
-   
    return (
      <SafeAreaView >
        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />

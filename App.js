@@ -22,6 +22,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 
+
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const MaterialBottomTabs = createMaterialBottomTabNavigator();
@@ -48,11 +49,12 @@ export default class App extends Component {
         <MaterialBottomTabs.Screen 
         name="Scanner" 
         component={App1}
-        options={{ title: "Scanner QRCode", headerStyle: {backgroundColor:"white"} }}        
+        options={{ title: "Scanner QRCode",
+        headerStyle: {backgroundColor:"white"} }}
         />
-        <MaterialBottomTabs.Screen name="Tab 3" 
-        component={Tab3} 
-        options={{ title: "Promotions"}}
+        <MaterialBottomTabs.Screen name="detail" 
+        component={Detail} 
+        options={{ title: "Promotions" }}
         />
     </MaterialBottomTabs.Navigator>
     }
