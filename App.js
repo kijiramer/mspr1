@@ -32,9 +32,31 @@ export default class App extends Component {
 
     createHomeStack = () =>
     <Stack.Navigator>
-      <Stack.Screen name="Feed" component={Feed} />
-      <Stack.Screen name="Scanner" component={App1} />
+      <Stack.Screen name="Feed" 
+      component={Feed} 
+      options={{ title: "GoApp"}}
+      />
+      <Stack.Screen name="Scanner"
+      children={this.createBottomTabs} 
+      options={{ title: "GoApp"}}
+      />
     </Stack.Navigator> 
+
+    createBottomTabs = () => {
+
+      return <MaterialBottomTabs.Navigator>
+        <MaterialBottomTabs.Screen 
+        name="Scanner" 
+        component={App1}
+        options={{ title: "Scanner QRCode", headerStyle: {backgroundColor:"white"} }}        
+        />
+        <MaterialBottomTabs.Screen name="Tab 3" 
+        component={Tab3} 
+        options={{ title: "Promotions"}}
+        />
+    </MaterialBottomTabs.Navigator>
+    }
+
 
   render() {
         return (

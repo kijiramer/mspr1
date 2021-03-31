@@ -10,6 +10,8 @@
    Text,
    useColorScheme,
    View,
+   TouchableOpacity,
+   AppRegistry,
  } from 'react-native';
  
  import {
@@ -21,21 +23,7 @@
  } from 'react-native/Libraries/NewAppScreen';
  
  import QRCodeScanner from 'react-native-qrcode-scanner';
- import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
- 
- 
- 
- const Tab = createMaterialBottomTabNavigator();
- 
- function MyTabs() {
-   return (
-     <Tab.Navigator>
-       <Tab.Screen name="Home" component={HomeScreen} />
-       <Tab.Screen name="Settings" component={SettingsScreen} />
-     </Tab.Navigator>
-   );
- }
- 
+  
  const Section = ({children, title}): Node => {
    return (
      <View style={styles.sectionContainer}>
@@ -64,25 +52,14 @@
  const App1: () => Node = () => {
    const isDarkMode = useColorScheme() === 'dark';
  
-   const backgroundStyle = {
-     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-   };
-   
-   function MyTabs() {
-     return (
-       <Tab.Navigator>
-         <Tab.Screen name="Home" component={HomeScreen} />
-         <Tab.Screen name="Settings" component={SettingsScreen} />
-       </Tab.Navigator>
-     );
-   }
+
    
    return (
-     <SafeAreaView style={backgroundStyle}>
+     <SafeAreaView >
        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
        <ScrollView
          contentInsetAdjustmentBehavior="automatic"
-         style={backgroundStyle}>
+         >
          
          
          <QRCodeScanner
@@ -93,8 +70,10 @@
            </Text>
          }
          bottomContent={
-           <Text style={styles.buttonText}>Scanner !</Text>
-         }
+          <TouchableOpacity style={styles.buttonTouchable}>
+            <Text style={styles.buttonText}>OK Scannez !</Text>
+          </TouchableOpacity>
+        }
        />
  
        </ScrollView>
@@ -120,7 +99,29 @@
    highlight: {
      fontWeight: '700',
    },
+   centerText: {
+    flex: 1,
+    fontSize: 18,
+    padding: 32,
+    color: '#777'
+  },
+  
+  textBold: {
+    fontWeight: '500',
+    color: '#000'},
+
+    buttonText: {
+      fontSize: 21,
+
+    color: 'rgb(0,122,255)'},
+
+    buttonTouchable: {
+        padding: 16
+      }
+
  });
  
+ AppRegistry.registerComponent('default', () => ScanScreen);
+
  export default App1;
  
